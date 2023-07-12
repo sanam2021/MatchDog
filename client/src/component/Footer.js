@@ -32,16 +32,19 @@ const FooterContainer = styled.footer`
   background-color: #ff4c68;
   text-align: center;
   color: #fff;
+  
 `;
 
 const FooterText = styled.p`
- font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
   color: #fff;
   text-align: center;
-  width: 100%;
+  width: 50rem;
+font-size:1.5em;
 
   @media (max-width: 768px) {
-    text-align: left;
+    text-align: center;
   }
 `;
 
@@ -56,7 +59,8 @@ const ContactOptions = styled.div`
 const ContactOption = styled.a`
   color: #fff;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 20px;
   transition: color 0.3s ease;
 
   &:hover {
@@ -65,8 +69,8 @@ const ContactOption = styled.a`
 `;
 
 const MainLogoImage = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 `;
 
 const LogoContainer = styled.div`

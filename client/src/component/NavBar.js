@@ -10,7 +10,7 @@ import Profile from "./Profile";
 import { UserContext } from "./UserContext";
 
 //Navbar 
-const NavBar = (handleMatchClick) => {
+const NavBar = ({handleMatchClick}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isLoading, error } = useAuth0(); // Retrieve isLoading and error variables from useAuth0 hook
   const { profile } = useContext(UserContext);
@@ -31,24 +31,24 @@ const NavBar = (handleMatchClick) => {
 
   return (
     <NavBarContainer>
-      <NavItem>
-        {profile && profile.dogs.length > 0 && (
-          <MyDogsLink to="/my-dogs">My dogs</MyDogsLink>
-        )}
-      </NavItem>
-
       <BrandLink to="/">
         <LogoContainer>
           <MainLogoImage src="./images/logoname.png" alt="Main Logo" />
         </LogoContainer>
         Match Dog
       </BrandLink>
+
       <NavItem to="/match" onClick={handleMatchClick}>
         <DogPawIcon icon={faPaw} />
       </NavItem>
       <NavItem to="/chat">
         <ChatIcon icon={faComments} />
       </NavItem>
+      {/* <NavItem>
+        {profile && profile.dogs.length > 0 && (
+          <MyDogsLink to="/my-dogs">My dogs</MyDogsLink>
+        )}
+      </NavItem> */}
       <NavLinksContainer isMenuOpen={isMenuOpen}>
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/testimonialsSection">Testimonials</NavLink>
@@ -56,8 +56,12 @@ const NavBar = (handleMatchClick) => {
       </NavLinksContainer>
       <NavbarContainer>
         <Profile />
+
         <LoginButton />
         <LogoutButton />
+        {profile && profile.dogs.length > 0 && (
+          <MyDogsLink to="/my-dogs">My dogs</MyDogsLink>
+        )}
       </NavbarContainer>
       <HamburgerIcon onClick={toggleMenu}>
         <HamburgerBar />
@@ -78,6 +82,7 @@ const NavBarContainer = styled.nav`
   /* padding-right: 150px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: calc(100% - 300px);
+  max-width: 600px;
   padding-bottom: 5em;
 `;
 
@@ -109,7 +114,7 @@ const NavLinksContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+margin-left: 260px;
   a {
     margin: 0px 5px;
   }
@@ -118,9 +123,7 @@ const NavLinksContainer = styled.div`
     display: ${({ isMenuOpen }) => (isMenuOpen ? "flex" : "none")};
     flex-direction: column;
     position: relative;
-    /* left: 20%; */
-    /* width: 100px;
-    height: 100px; */
+  
     padding: 2rem;
   }
 
@@ -183,7 +186,7 @@ const ChatIcon = styled(FontAwesomeIcon)`
 const NavItem = styled(Link)`
   display: inline-block;
   margin-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   text-decoration: none;
 `;
@@ -198,6 +201,7 @@ const MyDogsLink = styled(NavItem)`
   border: 2px solid #ef8172;
   border-radius: 40px;
   padding: 10px 20px;
+  display: block;
 
   &:hover {
     background-color: #ef8172;

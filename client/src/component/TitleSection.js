@@ -76,12 +76,12 @@ const DownloadButton = styled.button`
 `;
 
 const TitleImage = styled.img`
-  width: 20%;
+  width: 22%;
   height: auto;
   transform: rotate(25deg);
   position: absolute;
-  right: 360px;
-  bottom: -55%;
+  right: 460px;
+  bottom: -45%;
   border-radius: 50px;
   z-index: 100px;
   @media (max-width: 768px) {

@@ -22,7 +22,7 @@ const LoginButton = () => {
   const handleAuthentication = () => {
     // Perform any necessary actions after successful authentication
     const { state } = location;
-    const returnTo = state && state.returnTo ? state.returnTo : "/";
+    const returnTo = state && state.returnTo ? state.returnTo : "/match";
     navigate(returnTo);
 
     // Update the user value in the UserContext

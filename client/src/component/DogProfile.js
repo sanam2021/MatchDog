@@ -12,6 +12,7 @@ const DogProfile = () => {
   const [breed, setBreed] = useState("");
   const [bio, setBio] = useState("");
   const [picture, setPicture] = useState(null);
+    const [imageUrl, setImageUrl] = useState("");
   const [dogs, setDogs] = useState([]);
   const { profile, setProfile } = useContext(UserContext);
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ const DogProfile = () => {
         name,
         breed,
         bio,
-        picture,
+        picture: picture || imageUrl,
         userId: profile._id, // Pass the user ID obtained from Auth0
       };
 
@@ -107,6 +108,19 @@ const DogProfile = () => {
     setBreed("");
     setBio("");
     setPicture(null);
+    setImageUrl("");
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const imageDataUrl = reader.result;
+        setPicture(imageDataUrl);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -131,13 +145,22 @@ const DogProfile = () => {
           value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
-        <DogProfileInput
+
+        <DogProfileFileInput
           type="file"
           accept="image/*"
-          onChange={(e) => setPicture(e.target.files[0])}
+          onChange={handleFileChange}
+        />
+        {picture && <DogProfileImage src={picture} alt="Dog Profile" />}
+        <DogProfileInput
+          type="text"
+          placeholder="Image URL"
+          value={imageUrl}
+          onChange={(e) => setImageUrl(e.target.value)}
         />
         <DogProfileButton type="submit">Create Profile</DogProfileButton>
       </DogProfileForm>
+      
 
       <div>
         {dogs.map((dog) => (
@@ -162,6 +185,15 @@ const DogProfileContainer = styled.div`
   padding: 2rem;
 `;
 
+const DogProfileInput = styled.input`
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+`;
+
 const DogProfileHeading = styled.h2`
   font-size: 2rem;
   line-height: 1.5;
@@ -175,16 +207,13 @@ const DogProfileForm = styled.form`
   align-items: center;
   margin-top: 2rem;
 `;
-
-const DogProfileInput = styled.input`
-  width: 100%;
+const DogProfileImage = styled.img`
   max-width: 300px;
-  height: 40px;
-  padding: 10px;
   margin-bottom: 10px;
-  font-size: 1rem;
 `;
-
+const DogProfileFileInput = styled.input`
+  margin-bottom: 10px;
+`;
 const DogProfileButton = styled.button`
   display: inline-block;
   padding: 10px 20px;

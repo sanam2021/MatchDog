@@ -32,7 +32,8 @@ const Match = () => {
     <MatchContainer>
       <MatchBox>
         <MatchImage
-          src={require(`./DogsIMG/${currentDog.picture}`).default}
+          // src={require(`./DogsIMG/${currentDog.picture}`).default}
+          src={`./DogsIMG/${currentDog.picture}`}
           alt="Dog Profile"
         />
 
@@ -139,8 +140,8 @@ const MatchBox = styled.div`
 `;
 
 const MatchImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   margin-bottom: 1rem;
 `;
