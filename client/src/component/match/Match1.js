@@ -85,7 +85,6 @@ const Match1 = () => {
   );
 };
 
-
     const MatchContainer = styled.div`
       display: flex;
       flex-direction: column;

@@ -3,6 +3,33 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
+
+const CtaSection = () => {
+  const { isAuthenticated } = useAuth0();
+  return (
+    <SectionContainer>
+      <CtaContent>
+        <CtaHeading>Join MatchDog Today!</CtaHeading>
+        <CtaSubheading>
+          Find your perfect match and make new friends.
+        </CtaSubheading>
+
+        {isAuthenticated ? (
+          <p>
+            Welcome! You are logged in. Now you can create a Matchdog account.
+          </p>
+        ) : (
+          <p>
+            Please <Link to="/login">log in</Link> to create a Matchdog account.
+          </p>
+        )}
+
+        <CtaButton to="/dogprofile">Create Account Now</CtaButton>
+      </CtaContent>
+    </SectionContainer>
+  );
+};
+
 const SectionContainer = styled.section`
   background-color: #ef8172;
   p {
@@ -51,30 +78,7 @@ const CtaButton = styled(Link)`
   }
 `;
 
-const CtaSection = () => {
-    const { isAuthenticated } = useAuth0();
-  return (
-    <SectionContainer>
-      <CtaContent>
-        <CtaHeading>Join MatchDog Today!</CtaHeading>
-        <CtaSubheading>
-          Find your perfect match and make new friends.
-        </CtaSubheading>
 
-        {isAuthenticated ? (
-          <p>
-            Welcome! You are logged in. Now you can create a Matchdog account.
-          </p>
-        ) : (
-          <p>
-            Please <Link to="/login">log in</Link> to create a Matchdog account.
-          </p>
-        )}
 
-        <CtaButton to="/dogprofile">Create Account Now</CtaButton>
-      </CtaContent>
-    </SectionContainer>
-  );
-};
 
 export default CtaSection;

@@ -139,6 +139,7 @@ const MatchBox = styled.div`
   border-radius: 40px;
 `;
 
+
 const MatchImage = styled.img`
   width: 250px;
   height: 250px;

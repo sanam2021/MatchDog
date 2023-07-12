@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     color: #8f8f8f;
        font-size:1rem;
   }
+  
 
   .big-heading {
     font-family: "Montserrat-black", sans-serif;

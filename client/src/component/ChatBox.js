@@ -18,6 +18,7 @@ const ChatBox = () => {
       };
       setMessages([...messages, userMessage]);
 
+      
       // Generate robot response
       const robotResponse = generateRobotResponse(inputValue);
       setTimeout(() => {

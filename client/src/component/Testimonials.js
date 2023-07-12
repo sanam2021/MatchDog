@@ -18,6 +18,7 @@ const TestimonialText = styled.h2`
 
 `;
 
+
 const TestimonialContent = styled.div`
   display: flex;
   align-items: center;

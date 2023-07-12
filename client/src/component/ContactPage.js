@@ -47,6 +47,7 @@ const ContactPage = () => {
   );
 };
 
+
 const ContactContainer = styled.div`
   background-color: #ef8172;
   color: #fff;

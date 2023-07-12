@@ -23,6 +23,7 @@ export const UserProvider = ({ children }) => {
           setProfile(data.profile);
             console.log(user, profile);
         })
+        
         .catch((error) => {
           console.error("Error logging in or signing up:", error);
         });

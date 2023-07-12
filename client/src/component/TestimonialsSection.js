@@ -16,6 +16,7 @@ const TestimonialsSection= () => {
     navigate("/testimonialsSection1"); // navigate to testimonialsSection1 page 
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  
   return (
     <SectionContainer>
       <LogoContainer>

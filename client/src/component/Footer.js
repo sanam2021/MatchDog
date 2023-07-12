@@ -7,6 +7,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //footer
 const Footer = () => {
   return (
+    
     <FooterContainer>
       <LogoContainer>
         <MainLogoImage src="./images/logoname.png" alt="Main Logo" />

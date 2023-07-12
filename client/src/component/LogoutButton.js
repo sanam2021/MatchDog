@@ -24,6 +24,7 @@ const LogoutButton = () => {
     )
   );
 };
+
 // Button styled component
 const Button = styled.button`
   display: inline-block;

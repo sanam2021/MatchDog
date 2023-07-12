@@ -12,6 +12,7 @@ const MyDogs = () => {
  const navigate = useNavigate();
 
  
+ 
   useEffect(() => {
     const fetchDogDetails = async () => {
       try {

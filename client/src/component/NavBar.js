@@ -209,4 +209,5 @@ const MyDogsLink = styled(NavItem)`
   }
 `;
 
+
 export default NavBar;

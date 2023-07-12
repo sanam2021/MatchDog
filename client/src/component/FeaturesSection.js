@@ -16,7 +16,6 @@ const FeatureRow = styled.div`
   justify-content: center;
 
 `;
-
 const FeatureBox = styled.div`
   flex: 0 0 30%;
   max-width: 30%;

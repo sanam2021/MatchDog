@@ -10,7 +10,6 @@ import LocationPage from "./LocationPage";
 
 const Home = () => {
 
-
   return (
     <HomeContainer>
       <TitleSection />

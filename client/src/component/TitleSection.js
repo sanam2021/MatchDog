@@ -93,6 +93,7 @@ const TitleImage = styled.img`
   }
 `;
 
+
 const Message = styled.p`
   color: #fff;
 `;

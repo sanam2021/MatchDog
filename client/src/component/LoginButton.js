@@ -74,4 +74,5 @@ const Button = styled.button`
     color: #fff;
   }
 `;
+
 export default LoginButton;

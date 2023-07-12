@@ -18,6 +18,7 @@ const MyDog = ({ dogId }) => {
         console.error("Error fetching dog:", error);
       }
     };
+    
 
     fetchDog();
   }, [dogId]);

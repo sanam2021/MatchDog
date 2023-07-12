@@ -161,7 +161,6 @@ const DogProfile = () => {
         <DogProfileButton type="submit">Create Profile</DogProfileButton>
       </DogProfileForm>
       
-
       <div>
         {dogs.map((dog) => (
           <div key={dog._id}>

@@ -153,6 +153,7 @@ const DogDetails = () => {
  );
 };
 
+
 //style
 
 const TrashIcon = styled(FontAwesomeIcon)`

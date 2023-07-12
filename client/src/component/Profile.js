@@ -16,6 +16,7 @@ const Profile = () => {
     </Container>
   );
 };
+
 const Container = styled.div`
   color: #fff;
   padding: 2rem;
